@@ -8,8 +8,13 @@ const Cell = styled.div`
   border: 1px solid black;
 `;
 
-const GameCell = ({row, col}) => {
-  return ( <Cell /> );
+const GameCell = ({row, col, handleCellClick}) => {
+
+  const handleClick = () => {
+    handleCellClick(row, col);
+  }
+
+  return ( <Cell onClick={handleClick} /> );
 }
 
 export default GameCell;

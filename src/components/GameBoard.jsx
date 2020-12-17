@@ -28,15 +28,17 @@ const GameBoard = ({ rows, cols }) => {
     setBoard(board);
   }
 
+  const handleCellClick = (row, col) => {
+    console.log({row, col});
+  }
+
   useEffect(() => {
     generateBoard();
   }, []);
 
-  console.log(board);
-
   return (
-  <BoardContainer board={board} rows={rows} cols={cols}>
-    {board.board.map((row, i) => row.map((col, j) => <GameCell row={i} col={j} />))}
+  <BoardContainer rows={rows} cols={cols}>
+    {board.board.map((row, i) => row.map((col, j) => <GameCell key={`${i}, ${j}`} row={i} col={j} handleCellClick={handleCellClick} />))}
   </BoardContainer>);
 }
 
