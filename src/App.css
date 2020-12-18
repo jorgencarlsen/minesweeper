@@ -3,3 +3,92 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #0f3441;
+  color: #f3e9d2;
+}
+
+.title h1 {
+  color: #f3e9d2;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.game-container {
+  position: relative;
+  margin: 20px auto;
+  background-color: #114b5f;
+  padding: 10px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}
+
+button {
+  height: 30px;
+  width: 140px;
+  margin-top: 20px;
+  padding: 4px 0;
+  background-color: #50ffb1;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:focus {
+  outline: 0;
+  border: 0;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+.message-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  padding-bottom: 5px;
+  width: 420px;
+  height: 80px;
+  border-radius: 0px 0px 8px 8px;
+  bottom: 0;
+  left: 0;
+  background-color: #ef626c;
+  z-index: -1;
+  transition: 0.3s all;
+}
+
+.winner {
+  background-color: #006781;
+}
+
+.show {
+  animation: move-in ease-out 0.3s;
+  transform: translate(0, 90%);
+  z-index: 2;
+}
+
+@keyframes move-in {
+  0% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(0, 100%);
+  }
+
+  100% {
+    transform: translate(0, 90%);
+  }
+}

@@ -1,58 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import generateFrForGrid from '../utils/generateFrForGrid';
 import GameCell from './GameCell';
-import { buildBoard, handleCellClick } from '../gameLogic/gameLogic';
-
-const printFr = (num) => {
-  let outputString = '';
-  for (let i = 0; i < num; i++) {
-    outputString += '1fr ';
-  }
-  return outputString;
-}
 
 const BoardContainer = styled.div`
-  width: 600px;
-  height: 600px;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 20px 0;
+  padding: 10px;
   display: grid;
-  grid-template-columns: ${({cols}) => printFr(cols)};
-  grid-template-rows: ${({rows}) => printFr(rows)};
+  grid-template-columns: ${({cols}) => generateFrForGrid(cols)};
+  grid-template-rows: ${({rows}) => generateFrForGrid(rows)};
+  background-color: #114b5f;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
 `;
 
-const GameBoard = ({ rows, cols }) => {
-  const [board, setBoard] = useState([]);
-
-  const loseGame = () => {
-    console.log('You lost the game!');
-  }
-
-  const handleClick = (e, board, row, col) => {
-    e.stopPropagation();
-    if (board[row][col].mine) {
-      loseGame();
-    } else {
-      setBoard(handleCellClick([...board], row, col));
-    }
-  }
-
-  useEffect(() => {
-    setBoard(buildBoard(10, 10, 10));
-  }, []);
-
-  console.log({board});
+const GameBoard = ({ board, handleClick, handleGameReset, gameLost, gameWon }) => {
 
   return (
-  <BoardContainer rows={rows} cols={cols}>
-    {board.map((row, i) => row.map((col, j) => (
-      <GameCell
-        key={`${i}, ${j}`}
-        row={i}
-        col={j}
-        board={board}
-        handleClick={handleClick}
-      />)
-    ))}
-  </BoardContainer>);
+    <BoardContainer rows={board.length} cols={board[0].length}>
+      {board.map((row, i) => row.map((col, j) => (
+        <GameCell
+          key={`${i}, ${j}`}
+          row={i}
+          col={j}
+          board={board}
+          handleClick={handleClick}
+          gameLost={gameLost}
+        />)
+      ))}
+    <div className={gameLost ? 'message-container show' : 'message-container'}>
+      <h1>Oh no! You hit a mine!</h1>
+      <button onClick={handleGameReset}>Start Over?</button>
+    </div>
+    <div className={gameWon ? 'message-container winner show' : 'message-container winner'}>
+      <h1>Congrats! You won!</h1>
+      <button onClick={handleGameReset}>Play Again?</button>
+    </div>
+    </BoardContainer>
+  );
 }
 
 export default GameBoard;

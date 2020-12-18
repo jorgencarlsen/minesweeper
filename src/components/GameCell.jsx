@@ -4,15 +4,21 @@ import styled from 'styled-components';
 const Cell = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ board, row, col }) => board[row][col].clicked ? 'yellow' : 'blue'};
+  background-color: ${({ board, row, col }) => board[row][col].clicked ? '#50ffb1' : '#006781'};
   border: 1px solid black;
+  color: black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 60%;
 `;
 
-const GameCell = ({row, col, board, handleClick}) => {
+const GameCell = ({ row, col, board, handleClick, gameLost }) => {
   const boardCell = board[row][col];
 
   const handleCellClicked = (e) => {
-    if (boardCell.clicked) return;
+    if (boardCell.clicked || gameLost) return;
     handleClick(e, board, row, col)
   }
 

@@ -59,3 +59,13 @@ export const findSurroundingMines = function (board, row, col) {
   });
   return numberOfMinesFound;
 }
+
+export const checkForWin = function (board) {
+  for (let row = 0; row < board.length; row++) {
+    for (let col = 0; col < board.length; col++) {
+      const cell = board[row][col];
+      if (cell.clicked === false && cell.mine === false) return false;
+    }
+  }
+  return true;
+}
