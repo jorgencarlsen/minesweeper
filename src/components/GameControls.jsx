@@ -60,11 +60,11 @@ const GameControls = ({ handleGameReset, setValues, values }) => {
       <InputContainer>
         <div>
           Matrix size (4 to 30):
-          <input name='rows' type='number' placeholder='10' min='10' max='30' onChange={handleChange}></input>
+          <input value={values.rows} name='rows' type='number' placeholder='10' min='10' max='30' onChange={handleChange}></input>
         </div>
         <div>
           No. of mines (4 to 30):
-          <input name='mines' type='number' placeholder='10' onChange={handleChange}></input>
+          <input value={values.mines} name='mines' type='number' placeholder='10' onChange={handleChange}></input>
         </div>
       </InputContainer>
       <button onClick={handleGameReset}>Reset Game</button>
