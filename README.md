@@ -4,7 +4,7 @@ This is a simple Minesweeper app built with JavaScript and React.
 
 ## Gameplay
 
-Select the numer of rows and columns you want your minefield to have. Select the number of mines randomized across your board. Click reset board to set the board with your new stats.
+Select the number of rows and columns you want your minefield to have. Select the number of mines randomized across your board. Click reset board to set the board with your new stats.
 
 Click on a square. If the square contains a mine a pop up will notify you that you've lost the game. If the square is not a mine, the program will identify the number of surrounding mines and display it, allowing you to logically choose your next square. If there are no mines surrounding your choosen square the program will recursively click surrounding squares until it encounters a square close next to a mine or hits a wall.
 
@@ -40,13 +40,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.

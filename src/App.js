@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { buildBoard, handleCellClick, checkForWin } from './gameLogic/gameLogic';
+import { buildBoard, handleCellClick, checkForWin } from './logic/gameLogic';
 import styled from 'styled-components';
 import './App.css';
 import Header from './components/Header';
@@ -25,7 +25,6 @@ function App() {
   }
 
   const handleClick = (e, board, row, col) => {
-    e.stopPropagation();
     if (board[row][col].mine) {
       handleLoseGame();
     } else {

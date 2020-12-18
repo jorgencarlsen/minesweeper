@@ -53,7 +53,6 @@ const GameControls = ({ handleGameReset, setValues, values }) => {
         [name]: valueToNum,
       });
     }
-
   }
 
   return (
