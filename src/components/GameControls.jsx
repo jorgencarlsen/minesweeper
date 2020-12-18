@@ -42,12 +42,13 @@ const GameControls = ({ handleGameReset, setValues, values }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     const valueToNum = parseInt(value);
-    if (valueToNum < 4 || valueToNum > 30) {
+    if (valueToNum > 30) {
       setValues({
         ...values,
-        [name]: 10,
+        [name]: 30,
       });
     } else {
+      console.log({name, values})
       setValues({
         ...values,
         [name]: valueToNum,
@@ -59,11 +60,11 @@ const GameControls = ({ handleGameReset, setValues, values }) => {
     <ControlsContainer>
       <InputContainer>
         <div>
-          Matrix size (4 to 30):
+          Matrix size (up to 30):
           <input value={values.rows} name='rows' type='number' placeholder='10' min='10' max='30' onChange={handleChange}></input>
         </div>
         <div>
-          No. of mines (4 to 30):
+          No. of mines (up to 30):
           <input value={values.mines} name='mines' type='number' placeholder='10' onChange={handleChange}></input>
         </div>
       </InputContainer>
