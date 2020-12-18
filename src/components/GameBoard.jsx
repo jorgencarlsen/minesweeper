@@ -32,7 +32,7 @@ const GameBoard = ({ board, handleClick, handleGameReset, gameLost, gameWon }) =
         />)
       ))}
     <div className={gameLost ? 'message-container show' : 'message-container'}>
-      <h1>Oh no! You hit a mine!</h1>
+      <h1>You've be blown up by a mine!</h1>
       <button onClick={handleGameReset}>Start Over?</button>
     </div>
     <div className={gameWon ? 'message-container winner show' : 'message-container winner'}>

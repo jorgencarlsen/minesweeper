@@ -30,29 +30,6 @@ body {
   border-radius: 5px;
 }
 
-button {
-  height: 30px;
-  width: 140px;
-  margin-top: 20px;
-  padding: 4px 0;
-  background-color: #50ffb1;
-  border: 0;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-button:focus {
-  outline: 0;
-  border: 0;
-}
-
-button:active {
-  opacity: 0.7;
-}
-
 .message-container {
   position: absolute;
   display: flex;
@@ -60,8 +37,8 @@ button:active {
   align-items: flex-end;
   padding: 10px;
   padding-bottom: 5px;
-  width: 420px;
-  height: 80px;
+  width: 500px;
+  height: 100px;
   border-radius: 0px 0px 8px 8px;
   bottom: 0;
   left: 0;
@@ -91,4 +68,27 @@ button:active {
   100% {
     transform: translate(0, 90%);
   }
+}
+
+button {
+  height: 30px;
+  width: 140px;
+  margin-top: 20px;
+  padding: 4px 0;
+  background-color: #50ffb1;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:focus {
+  outline: 0;
+  border: 0;
+}
+
+button:active {
+  opacity: 0.7;
 }

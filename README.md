@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Welcome to Minesweeper!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple Minesweeper app built with JavaScript and React.
+
+## Gameplay
+
+Select the numer of rows and columns you want your minefield to have. Select the number of mines randomized across your board. Click reset board to set the board with your new stats.
+
+Click on a square. If the square contains a mine a pop up will notify you that you've lost the game. If the square is not a mine, the program will identify the number of surrounding mines and display it, allowing you to logically choose your next square. If there are no mines surrounding your choosen square the program will recursively click surrounding squares until it encounters a square close next to a mine or hits a wall.
+
+You win the game when you have revealed all square that don't contain mines. Good luck!
+
+## Technologies Used
+
+JavaScript, React, Styled Components, CSS
 
 ## Available Scripts
 
@@ -38,33 +50,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

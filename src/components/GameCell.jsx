@@ -12,6 +12,7 @@ const Cell = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 60%;
+  cursor: pointer;
 `;
 
 const GameCell = ({ row, col, board, handleClick, gameLost }) => {
